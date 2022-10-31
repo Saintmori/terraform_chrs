@@ -1,7 +1,7 @@
 resource "aws_security_group" "web" {
   name        = "web_instance_sg"
   description = "this is a security group for my instance"
-  vpc_id      = "vpc-02895d4cca9d04a65"
+  vpc_id      = data.aws_vpc.selected_vpc.id
 }
 resource "aws_security_group_rule" "web_ingress" {
   type              = "ingress"
